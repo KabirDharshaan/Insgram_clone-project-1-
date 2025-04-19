@@ -41,10 +41,10 @@ const icons = [
 
 const titles = [
   "Bucket List",
-  "Important Dates",
+  "calendar",
   "Love Letters",
   "Things I Love About You",
-  "Yuvan Playlist",
+  " Playlist",
   "Thalapathy Moments",
   "Cat Love Zone",
   "Nature Bliss",
@@ -56,7 +56,7 @@ const links = [
   "/calendar",
   "/letters",
   "/likes",
-  "/yuvan",
+  "/songs",
   "/vijay",
   "/cats",
   "/nature",
