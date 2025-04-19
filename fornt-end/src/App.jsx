@@ -11,7 +11,7 @@ import Songs from "./components/Songs";
 import Yuvan from "./songs/yuvan"; // ✅ Import the Yuvan page
 import Wish from "./components/WishList";
 import Memories from "./components/memories";
-
+import Indian from "./cusines/indian"
 function App() {
   return (
     <Router>
@@ -25,6 +25,7 @@ function App() {
         <Route path="/songs/yuvan" element={<Yuvan />} /> {/* ✅ New route for Yuvan songs */}
         <Route path="/wish" element={<Wish />} />
         <Route path="/memory" element={<Memories />} />
+        <Route path="/india" element={<Indian />} />
       </Routes>
     </Router>
   );
