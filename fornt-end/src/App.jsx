@@ -12,6 +12,10 @@ import Yuvan from "./songs/yuvan"; // ✅ Import the Yuvan page
 import Wish from "./components/WishList";
 import Memories from "./components/memories";
 import Indian from "./cusines/indian"
+import Italian from "./cusines/italian"
+import Mexican from "./cusines/Mexican"
+import Thai from "./cusines/Thai"
+import China from "./cusines/China"
 function App() {
   return (
     <Router>
@@ -26,6 +30,10 @@ function App() {
         <Route path="/wish" element={<Wish />} />
         <Route path="/memory" element={<Memories />} />
         <Route path="/india" element={<Indian />} />
+        <Route path="/italy" element={<Italian />} />
+        <Route path="/mexico" element={<Mexican />} />
+        <Route path="/thailand" element={<Thai />} />
+        <Route path="/china" element={<China />} />
       </Routes>
     </Router>
   );
