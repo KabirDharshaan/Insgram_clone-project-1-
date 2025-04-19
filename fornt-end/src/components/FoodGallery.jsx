@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -19,7 +20,7 @@ const countries = [
   { name: "Korean Cuisine", link: "/korea", image: "https://handluggageonly.co.uk/wp-content/uploads/2015/09/Hand-Luggage-Only-5-1.jpg" },
   { name: "Brazilian Cuisine", link: "/brazil", image: "https://nomadparadise.com/wp-content/uploads/2020/08/brazilian-food-06-1024x640.jpg" },
   { name: "Vietnamese Cuisine", link: "/vietnam", image: "https://tse1.mm.bing.net/th?id=OIP.bJztynIjr2HAjgh5AVU9XQHaDX&pid=Api&P=0&h=180" },
-  { name: "Your Favourite Cuisine", link: "/favourite", image: "https://tse4.mm.bing.net/th?id=OIP.Tq0RCu4jQmB5NDgfm3XLGAHaFa&pid=Api&P=0&h=180" },
+  { name: "add Your Favourite Cuisine", link: "/favourite", image: "https://tse4.mm.bing.net/th?id=OIP.Tq0RCu4jQmB5NDgfm3XLGAHaFa&pid=Api&P=0&h=180" },
 ];
 
 const FoodGallery = () => {
@@ -43,12 +44,12 @@ const FoodGallery = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.05 }}
-              className={`rounded-3xl p-6 bg-white shadow-xl backdrop-blur-md bg-opacity-70 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+              className={`rounded-xl overflow-hidden bg-white shadow-xl backdrop-blur-md bg-opacity-70 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                 country.name === "Your Favourite Cuisine" ? "ring-4 ring-pink-400 animate-pulse" : ""
               }`}
             >
-              {/* Display the cuisine image */}
-              <img src={country.image} alt={country.name} className="w-24 h-24 object-cover rounded-full mb-4" />
+              {/* Full rectangular image */}
+              <img src={country.image} alt={country.name} className="w-full h-48 object-cover mb-4" />
               <h2 className="text-2xl font-semibold text-red-700">{country.name}</h2>
             </motion.div>
           </Link>
