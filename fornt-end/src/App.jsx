@@ -9,6 +9,8 @@ import FoodGallery from "./components/FoodGallery";
 import Calendar from "./components/Calander";
 import Songs from "./components/Songs";
 import Yuvan from "./songs/yuvan"; // ✅ Import the Yuvan page
+import Wish from "./components/WishList";
+import Memories from "./components/memories";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/songs" element={<Songs />} />
         <Route path="/songs/yuvan" element={<Yuvan />} /> {/* ✅ New route for Yuvan songs */}
+        <Route path="/wish" element={<Wish />} />
+        <Route path="/memory" element={<Memories />} />
       </Routes>
     </Router>
   );
