@@ -219,37 +219,37 @@ const activities = [
   {
     title: "Attend a Professional Sports Game",
     description: "Feel the excitement of live sports and cheer for your favorite team.",
-    image: "https://example.com/pro-sports-game.jpg", // Replace with actual image URL
+    image: "https://tse1.mm.bing.net/th?id=OIP.-47ICSQfy3PO6sTHmNKofQHaE8&pid=Api&P=0&h=180", // Replace with actual image URL
   },
   {
     title: "Take Part in a Scavenger Hunt",
     description: "Enjoy the thrill of searching for clues and racing against time.",
-    image: "https://example.com/scavenger-hunt.jpg", // Replace with actual image URL
+    image: "https://tse3.mm.bing.net/th?id=OIP.81N0MKL18IyR_aXewWeengHaHa&pid=Api&P=0&h=180", // Replace with actual image URL
   },
   {
     title: "Go Sledding or Tobogganing",
     description: "Enjoy the winter fun of racing down snowy hills.",
-    image: "https://example.com/sledding.jpg", // Replace with actual image URL
+    image: "https://visitrainier.com/wp-content/uploads/2014/06/Caven-110213-5617.jpg", // Replace with actual image URL
   },
   {
     title: "Try a Flying Trapeze",
     description: "Swing through the air on a trapeze for a fun and thrilling experience.",
-    image: "https://example.com/flying-trapeze.jpg", // Replace with actual image URL
+    image: "https://tse4.mm.bing.net/th?id=OIP.4g_0OjAD7oA7GyOyd6pOOgHaE6&pid=Api&P=0&h=180", // Replace with actual image URL
   },
   {
     title: "Go Dog Sledding",
     description: "Ride through snowy landscapes pulled by a team of energetic sled dogs.",
-    image: "https://example.com/dog-sledding.jpg", // Replace with actual image URL
+    image: "https://adventures.com/media/17557/s-al-winter-dog-sledding-lapland-sweden-forest.jpg", // Replace with actual image URL
   },
   {
     title: "Explore an Abandoned Place",
     description: "Discover the eerie beauty of abandoned buildings or towns.",
-    image: "https://example.com/abandoned-place.jpg", // Replace with actual image URL
+    image: "https://www.noupe.com/wp-content/uploads/2020/12/florian-olivo-gQ5I9EaFeEA-unsplash-1024x683.jpg", // Replace with actual image URL
   },
   {
     title: "Ride a Ferris Wheel",
     description: "Enjoy a peaceful, scenic view from the top of a giant Ferris wheel.",
-    image: "https://example.com/ferris-wheel.jpg", // Replace with actual image URL
+    image: "https://www.thebeijinger.com/sites/default/files/thebeijinger/blog-images/265699/rsz_ocean_city_ferris_wheel.jpg", // Replace with actual image URL
   }
 ];
 
