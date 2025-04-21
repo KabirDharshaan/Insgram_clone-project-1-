@@ -9,7 +9,6 @@ const Songs = () => {
   const songs = [
     { title: 'Yuvan Hits', path: '/songs/yuvan' },
     { title: 'Harris Hits', path: '/songs/Harris' },
-    { title: 'Ilayaraja Classics' },
     { title: 'AR Rahman Tunes' },
   ];
 
