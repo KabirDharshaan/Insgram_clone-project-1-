@@ -6,19 +6,41 @@ import { FaHeart } from 'react-icons/fa';
 
 const WishList = () => {
   const [wish, setWish] = useState('');
-  const [wishes, setWishes] = useState(() => {
-    const stored = localStorage.getItem('wishes');
-    return stored ? JSON.parse(stored) : [];
-  });
+  const [wishes, setWishes] = useState([]);
 
+  // Fetch wishes from the backend
   useEffect(() => {
-    localStorage.setItem('wishes', JSON.stringify(wishes));
-  }, [wishes]);
+    fetch('http://localhost:5000/api/wishes')
+      .then((response) => response.json())
+      .then((data) => setWishes(data))
+      .catch((err) => console.error('Error fetching wishes:', err));
 
+    // Automatically play the audio when the component is loaded
+    const audio = new Audio('https://www.bensound.com/bensound-music/bensound-love.mp3');
+    audio.loop = true;  // Loop the audio
+    audio.play(); // Start playing the audio when the component loads
+
+    return () => {
+      audio.pause(); // Pause the audio when the component is unmounted
+    };
+  }, []);  // Empty array ensures it only runs once after the component is mounted
+
+  // Add a new wish to the backend
   const handleAddWish = () => {
     if (wish.trim()) {
-      setWishes([...wishes, wish]);
-      setWish('');
+      fetch('http://localhost:5000/api/wishes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ wish }),
+      })
+        .then((response) => response.json())
+        .then((newWish) => {
+          setWishes([...wishes, newWish]);
+          setWish('');
+        })
+        .catch((err) => console.error('Error adding wish:', err));
     }
   };
 
@@ -37,13 +59,11 @@ const WishList = () => {
         </motion.div>
       ))}
 
-      {/* 🎵 Background Music */}
-      <audio autoPlay loop className="hidden">
-        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg" />
-      </audio>
+      {/* 🎵 Background Music (audio is handled by useEffect now) */}
+      {/* The audio element is no longer necessary here since it's managed by useEffect */}
 
       {/* 💬 Title */}
-      <motion.h1 
+      <motion.h1
         className="text-4xl md:text-5xl font-bold text-rose-700 mb-6 font-[cursive] text-center drop-shadow-md"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -53,7 +73,7 @@ const WishList = () => {
       </motion.h1>
 
       {/* ✍️ Input Section */}
-      <motion.div 
+      <motion.div
         className="bg-white bg-opacity-90 backdrop-blur-lg rounded-3xl shadow-2xl p-6 w-full max-w-xl mb-6 border border-rose-200"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -61,7 +81,7 @@ const WishList = () => {
       >
         <input
           type="text"
-          placeholder="Type a romantic wish ✨..."
+          placeholder="karnika add ur wish ✨..."
           value={wish}
           onChange={(e) => setWish(e.target.value)}
           className="w-full p-4 rounded-xl border border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400 text-rose-700 placeholder-rose-300 text-lg"
@@ -87,7 +107,7 @@ const WishList = () => {
               transition={{ type: 'spring', stiffness: 70 }}
             >
               <FaHeart className="text-rose-500" />
-              <p className="text-rose-700 font-medium">{w}</p>
+              <p className="text-rose-700 font-medium">{w.wish}</p>
             </motion.div>
           ))}
         </AnimatePresence>
